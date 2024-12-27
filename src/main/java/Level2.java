@@ -122,6 +122,6 @@ public class Main {
     		    	        current = current.getNext(); 
     		    	 }
     		    String max = String.valueOf(maxCount + 1);
-    		    return max;
+    		    return max + "עולה חדש  ";
     		}
     	}
