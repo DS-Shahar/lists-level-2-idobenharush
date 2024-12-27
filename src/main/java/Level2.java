@@ -1,16 +1,17 @@
-package gh;
+package nthyt;
 import java.util.*;
 public class Main {
     public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-    int[] arr = {1, 2, 3, 4, 5, 6, 7};
+    int[] arr = {1, 2, 3, 4, 5, 6, 6, 7};
     int[] arr1 = {10, 20, 30, 40, 50, 60, 70};
     Node<Integer> L1 = makeList(arr);
     Node<Integer> L2 = makeList(arr1);
     //System.out.println(ex1(L1,L2));
     // System.out.println(ex2(L1));
     //System.out.println(Distances(L1,5));
-    System.out.println(ex4(L1));
+    //System.out.println(ex4(L1));
+    System.out.println(ex5(L1));
     }
     	 public static Node<Integer> makeList(int[] arr) {
     	        Node<Integer> head = new Node<>(arr[0]);
@@ -93,4 +94,15 @@ public class Main {
     		 }
     		 return true;
     	 }
-    	}
+    	 public static Node<Integer> ex5(Node<Integer> L1) {
+    		 Node <Integer> current = ex2(L1);
+    		 while(current.getNext() != null) {
+    			 if((current.getValue()==current.getNext().getValue())){
+    		            current.setNext(current.getNext().getNext());
+    		        } else {
+    		            current = current.getNext(); 
+    		        }
+    			 }
+    		 return L1;
+    		 }
+    	   }
