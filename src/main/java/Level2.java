@@ -1,4 +1,4 @@
-package nthyt;
+package htyh;
 import java.util.*;
 public class Main {
     public static Scanner sc = new Scanner(System.in);
@@ -11,7 +11,8 @@ public class Main {
     // System.out.println(ex2(L1));
     //System.out.println(Distances(L1,5));
     //System.out.println(ex4(L1));
-    System.out.println(ex5(L1));
+    //System.out.println(ex5(L1));
+    System.out.println(ex6(L1));
     }
     	 public static Node<Integer> makeList(int[] arr) {
     	        Node<Integer> head = new Node<>(arr[0]);
@@ -105,4 +106,22 @@ public class Main {
     			 }
     		 return L1;
     		 }
-    	   }
+    	 public static String ex6(Node<Integer> L1) {
+    		    int count = 0;
+    		    int maxCount = 0;
+    		    Node<Integer> current = L1;
+    		    while (current != null && current.getNext() != null) {
+    		    	        if (current.getValue() <= current.getNext().getValue()) {
+    		    	            count++;
+    		    	        } else {
+    		    	            count = 0; 
+    		    	            }
+    		    	        if (count > maxCount) {
+    		    	            maxCount = count; 
+    		    	        }
+    		    	        current = current.getNext(); 
+    		    	 }
+    		    String max = String.valueOf(maxCount + 1);
+    		    return max;
+    		}
+    	}
