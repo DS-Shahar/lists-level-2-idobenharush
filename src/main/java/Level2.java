@@ -106,7 +106,7 @@ public class Main {
     			 }
     		 return L1;
     		 }
-    	 public static String ex6(Node<Integer> L1) {
+    	 public static int ex6(Node<Integer> L1) {
     		    int count = 0;
     		    int maxCount = 0;
     		    Node<Integer> current = L1;
@@ -121,7 +121,25 @@ public class Main {
     		    	        }
     		    	        current = current.getNext(); 
     		    	 }
-    		    String max = String.valueOf(maxCount + 1);
-    		    return max + "עולה חדש  ";
-    		}
+    		    return maxCount+1;
+    		}    	
+    	 public static Node<Integer> ex7(Node<Integer> L1) {
+ 		    int count = 0;
+ 		    int maxCount = 0;
+ 		    Node<Integer> current = L1;
+ 		    Node<Integer> ido = new Node<>(-1);
+ 		    while (current != null && current.getNext() != null) {
+ 		    	        if (current.getValue() <= current.getNext().getValue()) {
+ 		    	            count++;
+ 		    	           ido.getNext().getValue() = current.getValue();
+ 		    	        } else {
+ 		    	            count = 0; 
+ 		    	            }
+ 		    	        if (count > maxCount) {
+ 		    	            maxCount = count; 
+ 		    	        }
+ 		    	        current = current.getNext(); 
+ 		    	 }
+ 		    return maxCount+1;
+ 		}
     	}
